@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torneo Relámpago - Deportes Inclusivos 2025</title>
-    <meta name="description" content="Participa en el Torneo Relámpago 2025: el evento deportivo inclusivo más grande de la región. Disciplinas adaptadas para todas las capacidades.">
+    <title>Torneo Relámpago - Deportes Inclusivos 2025 | Competencia Deportiva Inclusiva</title>
+    <meta name="description"
+        content="Participa en el Torneo Relámpago 2025: el evento deportivo inclusivo más grande de la región. Disciplinas adaptadas para todas las capacidades. Inscripción gratuita.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="ict" href="">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <div class="logo-placeholder">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 0L25.5 14.5H40L27.5 23.5L32.5 38L20 29L7.5 38L12.5 23.5L0 14.5H14.5L20 0Z" fill="#ffffff"/>
-                    </svg>
-                </div>
+            <a href="#inicio" class="logo">
+                    <img src="assets/logo final.png" style="width: 80px;">
                 <h1>Torneo Relámpago</h1>
-            </div>
+            </a>
             <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -26,11 +26,12 @@
             </button>
             <nav class="nav" aria-label="Navegación principal">
                 <ul>
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
                     <li><a href="#disciplinas" class="nav-link">Disciplinas</a></li>
                     <li><a href="#inscripcion" class="nav-link">Inscripción</a></li>
-                    <li><a href="#accesibilidad" class="nav-link">Accesibilidad</a></li>
-                    <li><a href="#reglamento" class="nav-link">Reglamento</a></li>
+                    <!-- <li><a href="#accesibilidad" class="nav-link">Accesibilidad</a></li> -->
+                    <!-- <li><a href="#reglamento" class="nav-link">Reglamento</a></li> -->
+                    <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
@@ -59,37 +60,41 @@
             <h2 id="auth-modal-title">Iniciar Sesión</h2>
             <form id="auth-form">
                 <div class="form-group">
-                    <label for="auth-email">Email</label>
-                    <input type="email" id="auth-email" required aria-required="true">
+                    <label for="auth-email">Correo Electrónico</label>
+                    <input type="email" id="auth-email" required aria-required="true" placeholder="tu@email.com">
                 </div>
                 <div class="form-group">
                     <label for="auth-password">Contraseña</label>
-                    <input type="password" id="auth-password" required aria-required="true">
+                    <input type="password" id="auth-password" required aria-required="true" placeholder="••••••••">
                 </div>
                 <div id="auth-register-fields" class="hidden">
                     <div class="form-group">
                         <label for="auth-fullname">Nombre Completo</label>
-                        <input type="text" id="auth-fullname">
+                        <input type="text" id="auth-fullname" placeholder="Juan Pérez González">
                     </div>
                     <div class="form-group">
                         <label for="auth-phone">Teléfono</label>
-                        <input type="tel" id="auth-phone">
+                        <input type="tel" id="auth-phone" placeholder="+56 9 1234 5678">
                     </div>
                     <div class="form-group">
                         <label for="auth-commune">Comuna</label>
-                        <input type="text" id="auth-commune">
+                        <input type="text" id="auth-commune" placeholder="Tu comuna">
                     </div>
                 </div>
                 <button type="submit" class="btn-primary full-width" id="auth-submit">Iniciar Sesión</button>
             </form>
             <div class="auth-switch">
-                <p id="auth-switch-text">¿No tienes cuenta? <button id="auth-switch-btn" class="link-btn">Regístrate aquí</button></p>
+                <p id="auth-switch-text">¿No tienes cuenta? <button id="auth-switch-btn" class="link-btn">Regístrate
+                        aquí</button></p>
             </div>
         </div>
     </div>
 
     <!-- Toast de notificaciones -->
-    <div id="toast" class="toast hidden" aria-live="polite" aria-atomic="true"></div>
+    <div id="toast" class="toast hidden" aria-live="polite" aria-atomic="true">
+        <span class="toast-icon">ℹ️</span>
+        <span class="toast-message"></span>
+    </div>
 
     <!-- Secciones principales -->
     <main class="main-content">
@@ -100,7 +105,9 @@
                     <h2>¡Vive la emoción del deporte inclusivo!</h2>
                     <p class="hero-subtitle">Torneo Relámpago 2025</p>
                     <p class="hero-date">15-17 de Mayo, 2025 - Estadio Municipal</p>
-                    <p class="hero-description">Únete al evento deportivo más inclusivo de la región. Atletas de todas las capacidades compitiendo juntos en un ambiente de camaradería y superación personal.</p>
+                    <p class="hero-description">Únete al evento deportivo más inclusivo de la región, donde atletas de
+                        todas las capacidades compiten juntos en un ambiente de camaradería, respeto y superación
+                        personal.</p>
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number">500+</span>
@@ -114,6 +121,10 @@
                             <span class="stat-number">3</span>
                             <span class="stat-label">Días</span>
                         </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Inclusivo</span>
+                        </div>
                     </div>
                     <button id="hero-inscribe-btn" class="btn-primary btn-large">¡Inscríbete Gratis!</button>
                 </div>
@@ -123,13 +134,16 @@
         <!-- Sección Disciplinas -->
         <section id="disciplinas" class="section">
             <div class="container">
-                <h2>Nuestras Disciplinas</h2>
-                <p class="section-intro">Ofrecemos una amplia variedad de deportes adaptados para todas las capacidades. ¡Encuentra tu favorita!</p>
+                <h2>Nuestras Disciplinas Deportivas</h2>
+                <p class="section-intro">Ofrecemos una amplia variedad de deportes adaptados e inclusivos diseñados para
+                    todas las capacidades. Cada disciplina cuenta con categorías específicas que garantizan competencias
+                    justas y emocionantes.</p>
                 <div id="disciplines-container" class="disciplines-grid">
                     <!-- Las disciplinas se cargan dinámicamente -->
                 </div>
                 <div class="section-cta">
-                    <p>¿No encuentras tu deporte? <a href="#contacto" class="link-btn">Contáctanos</a> para sugerir nuevas disciplinas.</p>
+                    <p>¿No encuentras tu deporte favorito? <a href="#contacto" class="link-btn">Contáctanos</a> para
+                        sugerir nuevas disciplinas.</p>
                 </div>
             </div>
         </section>
@@ -138,22 +152,23 @@
         <section id="inscripcion" class="section">
             <div class="container">
                 <h2>Inscripción al Torneo</h2>
-                <p class="section-intro">Participar es fácil, rápido y completamente gratuito. Sigue estos simples pasos:</p>
+                <p class="section-intro">Participar es fácil, rápido y completamente gratuito. Sigue estos simples pasos
+                    para formar parte de esta experiencia única:</p>
                 <div class="steps-container">
                     <div class="step">
                         <div class="step-number">1</div>
                         <h3>Regístrate</h3>
-                        <p>Crea tu cuenta en menos de 2 minutos</p>
+                        <p>Crea tu cuenta personalizada en menos de 2 minutos con tus datos básicos</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>Completa tu perfil</h3>
-                        <p>Proporciona tus datos básicos y selecciona tu disciplina</p>
+                        <p>Proporciona tus datos deportivos y selecciona tu disciplina preferida</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <h3>¡Listo!</h3>
-                        <p>Recibirás la confirmación y toda la información del evento</p>
+                        <h3>Confirma tu participación</h3>
+                        <p>Revisa y envía tu inscripción para recibir confirmación inmediata</p>
                     </div>
                 </div>
                 <div id="inscription-container">
@@ -175,53 +190,59 @@
         <!-- Sección Accesibilidad -->
         <section id="accesibilidad" class="section">
             <div class="container">
-                <h2>Compromiso con la Inclusión</h2>
+                <h2>Compromiso con la Inclusión Total</h2>
                 <div class="accessibility-info">
                     <div class="accessibility-hero">
                         <h3>Deportes sin barreras, oportunidades sin límites</h3>
-                        <p>En el Torneo Relámpago creemos firmemente que el deporte es un derecho universal. Hemos diseñado cada aspecto del evento para garantizar la participación plena de atletas con todo tipo de capacidades.</p>
+                        <p>En el Torneo Relámpago creemos firmemente que el deporte es un derecho universal. Hemos
+                            diseñado meticulosamente cada aspecto del evento para garantizar la participación plena y
+                            equitativa de atletas con todo tipo de capacidades.</p>
                     </div>
-                    
+
                     <div class="accessibility-features">
                         <div class="feature">
                             <div class="feature-icon">♿</div>
-                            <h4>Accesibilidad Física Completa</h4>
+                            <h4>Accesibilidad Física Integral</h4>
                             <ul>
-                                <li>Rampas de acceso en todas las instalaciones</li>
-                                <li>Baños adaptados con espacios de transferencia</li>
-                                <li>Estacionamientos reservados cercanos</li>
-                                <li>Vías de circulación amplias y despejadas</li>
+                                <li>Rampas de acceso en todas las instalaciones deportivas</li>
+                                <li>Baños adaptados con espacios de transferencia amplios</li>
+                                <li>Estacionamientos reservados en ubicaciones estratégicas</li>
+                                <li>Vías de circulación amplias y completamente despejadas</li>
+                                <li>Sillas de ruedas deportivas disponibles para préstamo</li>
                             </ul>
                         </div>
                         <div class="feature">
                             <div class="feature-icon">👁️</div>
-                            <h4>Inclusión Sensorial</h4>
+                            <h4>Inclusión Sensorial Completa</h4>
                             <ul>
-                                <li>Señalización en braille y alto contraste</li>
-                                <li>Sistemas de audio descriptivo</li>
-                                <li>Intérpretes de lengua de señas en todas las actividades</li>
+                                <li>Señalización en braille y alto contraste en todas las áreas</li>
+                                <li>Sistemas de audio descriptivo para personas con discapacidad visual</li>
+                                <li>Intérpretes de lengua de señas certificados en todas las actividades</li>
                                 <li>Zonas tranquilas para personas con sensibilidad sensorial</li>
+                                <li>Materiales táctiles para orientación y navegación</li>
                             </ul>
                         </div>
                         <div class="feature">
                             <div class="feature-icon">🤝</div>
-                            <h4>Apoyo Personalizado</h4>
+                            <h4>Apoyo Personalizado Integral</h4>
                             <ul>
                                 <li>Guías especializados para personas con discapacidad visual</li>
-                                <li>Personal de apoyo en cada disciplina</li>
-                                <li>Material en formatos accesibles (audio, braille, fácil lectura)</li>
+                                <li>Personal de apoyo capacitado en cada disciplina deportiva</li>
+                                <li>Material en formatos accesibles múltiples (audio, braille, fácil lectura)</li>
                                 <li>Asistencia personal disponible durante todo el evento</li>
+                                <li>Equipamiento adaptado para todas las disciplinas</li>
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="accessibility-cta">
-                        <h4>¿Necesitas ajustes específicos?</h4>
-                        <p>Estamos aquí para ayudarte. Contáctanos y diseñaremos los apoyos que necesites para tu participación plena.</p>
-                        <p><strong>Coordinación de Inclusión:</strong><br>
-                        Email: inclusion@torneorelampago.cl<br>
-                        Teléfono: +56 9 1234 5678<br>
-                        Horario: Lunes a Viernes 9:00 - 18:00</p>
+                        <h4>¿Necesitas ajustes específicos o apoyos personalizados?</h4>
+                        <p>Nuestro equipo de inclusión está aquí para ayudarte. Contáctanos y diseñaremos en conjunto
+                            los apoyos específicos que necesites para tu participación plena y exitosa.</p>
+                        <p><strong>Coordinación de Inclusión y Accesibilidad:</strong><br>
+                            Email: inclusion@torneorelampago.cl<br>
+                            Teléfono: +56 9 1234 5678<br>
+                            Horario de atención: Lunes a Viernes 9:00 - 18:00</p>
                     </div>
                 </div>
             </div>
@@ -230,13 +251,17 @@
         <!-- Sección Reglamento -->
         <section id="reglamento" class="section">
             <div class="container">
-                <h2>Documentos Oficiales</h2>
-                <p class="section-intro">Consulta toda la información oficial del torneo. Conoce las bases, reglamentos y protocolos para participar.</p>
+                <h2>Documentos Oficiales del Torneo</h2>
+                <p class="section-intro">Consulta toda la información oficial del torneo. Conoce las bases, reglamentos
+                    específicos por disciplina, protocolos de seguridad y todos los documentos necesarios para
+                    participar.</p>
                 <div id="documents-container" class="documents-grid">
                     <!-- Los documentos se cargan dinámicamente -->
                 </div>
                 <div class="documents-info">
-                    <p><strong>Nota:</strong> Todos los documentos están disponibles en formatos accesibles. Si necesitas alguna adaptación, no dudes en contactarnos.</p>
+                    <p><strong>Nota importante:</strong> Todos los documentos oficiales están disponibles en múltiples
+                        formatos accesibles. Si necesitas alguna adaptación específica o formato alternativo, no dudes
+                        en contactarnos directamente.</p>
                 </div>
             </div>
         </section>
@@ -244,42 +269,53 @@
         <!-- Sección Testimonios -->
         <section id="testimonios" class="section testimonios-section">
             <div class="container">
-                <h2>Historias de Superación</h2>
-                <p class="section-intro">Conoce las experiencias de participantes de ediciones anteriores</p>
+                <h2>Historias de Superación y Éxito</h2>
+                <p class="section-intro">Conoce las experiencias transformadoras de participantes de ediciones
+                    anteriores que han encontrado en el deporte inclusivo una herramienta de crecimiento personal y
+                    social.</p>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"El Torneo Relámpago cambió mi perspectiva sobre lo que puedo lograr. Como atleta en silla de ruedas, encontré un espacio donde mis capacidades eran celebradas, no limitadas."</p>
+                            <p>"El Torneo Relámpago cambió completamente mi perspectiva sobre lo que puedo lograr. Como
+                                atleta en silla de ruedas, encontré un espacio donde mis capacidades eran celebradas, no
+                                limitadas. La organización y el ambiente inclusivo superaron todas mis expectativas."
+                            </p>
                         </div>
                         <div class="testimonial-author">
                             <div class="author-avatar">M</div>
                             <div class="author-info">
                                 <strong>María González</strong>
-                                <span>Atletismo adaptado</span>
+                                <span>Atletismo adaptado - Participante 2024</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"Participar junto a mi hija con síndrome de Down fue una experiencia transformadora. La inclusión real que vivenciamos aquí debería ser el estándar en todos los eventos deportivos."</p>
+                            <p>"Participar junto a mi hija con síndrome de Down fue una experiencia transformadora para
+                                toda nuestra familia. La inclusión real que vivenciamos aquí debería ser el estándar en
+                                todos los eventos deportivos. Los organizadores han creado algo verdaderamente
+                                especial."</p>
                         </div>
                         <div class="testimonial-author">
                             <div class="author-avatar">C</div>
                             <div class="author-info">
                                 <strong>Carlos Herrera</strong>
-                                <span>Padre participante</span>
+                                <span>Padre participante - Natación inclusiva</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"Como voluntario del torneo, he sido testigo de cómo el deporte puede unir a personas de todas las capacidades. La energía positiva de este evento es simplemente contagiosa."</p>
+                            <p>"Como voluntario del torneo por tercer año consecutivo, he sido testigo privilegiado de
+                                cómo el deporte puede unir a personas de todas las capacidades. La energía positiva, el
+                                respeto mutuo y la camaradería de este evento son simplemente contagiosos e
+                                inspiradores."</p>
                         </div>
                         <div class="testimonial-author">
                             <div class="author-avatar">A</div>
                             <div class="author-info">
                                 <strong>Ana López</strong>
-                                <span>Voluntaria 3er año</span>
+                                <span>Voluntaria - 3er año consecutivo</span>
                             </div>
                         </div>
                     </div>
@@ -291,54 +327,85 @@
         <section id="faq" class="section">
             <div class="container">
                 <h2>Preguntas Frecuentes</h2>
-                <p class="section-intro">Resolvemos tus dudas para que te enfoques en lo importante: disfrutar del deporte.</p>
+                <p class="section-intro">Resolvemos tus dudas más comunes para que puedas enfocarte en lo realmente
+                    importante: disfrutar del deporte y vivir una experiencia única de superación personal.</p>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">¿Quiénes pueden participar en el torneo?</button>
+                        <button class="faq-question" aria-expanded="false">¿Quiénes pueden participar en el
+                            torneo?</button>
                         <div class="faq-answer">
-                            <p>¡Todos! El Torneo Relámpago está abierto a personas de todas las edades, capacidades y niveles de experiencia. Cada disciplina cuenta con categorías adaptadas para garantizar competencias justas y emocionantes para todos los participantes.</p>
+                            <p>¡El Torneo Relámpago está abierto a todas las personas sin distinción! Aceptamos
+                                participantes de todas las edades, capacidades y niveles de experiencia deportiva. Cada
+                                disciplina cuenta con categorías específicamente adaptadas para garantizar competencias
+                                justas, emocionantes y accesibles para todos los participantes, independientemente de
+                                sus características físicas, sensoriales o cognitivas.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">¿Cuál es el costo de inscripción?</button>
                         <div class="faq-answer">
-                            <p>La participación es completamente gratuita. Creemos que las barreras económicas no deberían impedir que nadie disfrute del deporte. Todos los gastos de organización, implementos, logística y premios están cubiertos por nuestros patrocinadores y la organización.</p>
+                            <p>La participación en el Torneo Relámpago es completamente gratuita. Creemos firmemente que
+                                las barreras económicas no deberían impedir que nadie disfrute de los beneficios del
+                                deporte. Todos los gastos de organización, implementos deportivos, logística, premios y
+                                servicios de accesibilidad están cubiertos por nuestros generosos patrocinadores y la
+                                organización del evento.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">¿Puedo participar en más de una disciplina?</button>
+                        <button class="faq-question" aria-expanded="false">¿Puedo participar en más de una
+                            disciplina?</button>
                         <div class="faq-answer">
-                            <p>Sí, siempre que los horarios de las competencias no se superpongan. Sin embargo, recomendamos no inscribirse en más de 3 disciplinas para evitar sobrecarga y poder disfrutar plenamente de cada experiencia. Nuestro equipo puede asesorarte para crear un programa equilibrado.</p>
+                            <p>Sí, es posible participar en múltiples disciplinas, siempre que los horarios de las
+                                competencias no se superpongan. Sin embargo, recomendamos prudencia y no inscribirse en
+                                más de 3 disciplinas para evitar sobrecarga física y mental, y poder disfrutar
+                                plenamente de cada experiencia deportiva. Nuestro equipo de coordinación deportiva puede
+                                asesorarte personalmente para crear un programa equilibrado que se adapte a tus
+                                intereses y capacidades.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">¿Qué debo llevar el día del evento?</button>
                         <div class="faq-answer">
-                            <p>Te recomendamos llevar:</p>
+                            <p>Te recomendamos llevar los siguientes elementos esenciales:</p>
                             <ul>
-                                <li>Ropa deportiva cómoda y adecuada para tu disciplina</li>
-                                <li>Calzado deportivo (específico para tu deporte si es necesario)</li>
-                                <li>Hidratación personal (tenemos puntos de agua, pero es bueno tener tu botella)</li>
+                                <li>Ropa deportiva cómoda y adecuada para tu disciplina específica</li>
+                                <li>Calzado deportivo apropiado (específico para tu deporte si es necesario)</li>
+                                <li>Hidratación personal (tenemos puntos de agua disponibles, pero recomendamos tener tu
+                                    botella personal)</li>
                                 <li>Protector solar y gorra para los deportes al aire libre</li>
-                                <li>Cualquier equipo específico que uses habitualmente (silla de ruedas deportiva, prótesis, etc.)</li>
+                                <li>Cualquier equipo específico que uses habitualmente (silla de ruedas deportiva,
+                                    prótesis, ayudas técnicas, etc.)</li>
+                                <li>Documentación personal identificatoria</li>
                             </ul>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">¿Cómo funciona el sistema de categorías?</button>
+                        <button class="faq-question" aria-expanded="false">¿Cómo funciona el sistema de
+                            categorías?</button>
                         <div class="faq-answer">
-                            <p>Utilizamos un sistema de categorización mixta que considera edad, experiencia previa y características específicas cuando es necesario. Nuestro objetivo es crear grupos de competencia equilibrados donde todos tengan oportunidades reales de destacar. Los detalles específicos por disciplina están disponibles en el reglamento oficial.</p>
+                            <p>Utilizamos un sistema de categorización mixta e integral que considera múltiples factores
+                                como edad, experiencia previa, tipo y grado de discapacidad cuando es relevante, y
+                                características específicas de cada participante. Nuestro objetivo fundamental es crear
+                                grupos de competencia equilibrados donde todos los atletas tengan oportunidades reales y
+                                equitativas de destacar. Los detalles específicos por disciplina están disponibles en el
+                                reglamento oficial de cada deporte.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">¿Hay premios para los ganadores?</button>
                         <div class="faq-answer">
-                            <p>Sí, todos los participantes reciben un kit de bienvenida y un certificado de participación. Los ganadores de cada categoría reciben medallas y trofeos. Sin embargo, el verdadero premio es la experiencia de superación personal y la camaradería entre participantes. ¡Todos son ganadores en el Torneo Relámpago!</p>
+                            <p>Sí, todos los participantes reciben un kit de bienvenida especial y un certificado de
+                                participación oficial. Los ganadores de cada categoría reciben medallas conmemorativas y
+                                trofeos representativos. Sin embargo, el verdadero premio del Torneo Relámpago es la
+                                experiencia invaluable de superación personal, el desarrollo de nuevas amistades, y la
+                                camaradería única que se genera entre todos los participantes. ¡En el Torneo Relámpago,
+                                cada persona que se atreve a participar es ya un ganador!</p>
                         </div>
                     </div>
                 </div>
                 <div class="faq-cta">
-                    <p>¿Tu pregunta no está aquí? <a href="#contacto" class="link-btn">Contáctanos directamente</a></p>
+                    <p>¿Tu pregunta no está respondida aquí? <a href="#contacto" class="link-btn">Contáctanos
+                            directamente</a> y nuestro equipo te responderá personalmente en menos de 24 horas.</p>
                 </div>
             </div>
         </section>
@@ -346,26 +413,30 @@
         <!-- Sección Contacto -->
         <section id="contacto" class="section">
             <div class="container">
-                <h2>Contacto</h2>
-                <p class="section-intro">Estamos aquí para ayudarte. No dudes en contactarnos para resolver cualquier duda.</p>
+                <h2>Contacto y Información</h2>
+                <p class="section-intro">Estamos aquí para ayudarte y resolver cualquier duda o inquietud. No dudes en
+                    contactarnos a través de los siguientes canales oficiales.</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <h3>Información General</h3>
-                        <p>Email: info@torneorelampago.cl</p>
-                        <p>Teléfono: +56 2 2345 6789</p>
-                        <p>Horario: Lunes a Viernes 9:00 - 18:00</p>
+                        <p><strong>Email:</strong> info@torneorelampago.cl</p>
+                        <p><strong>Teléfono:</strong> +56 2 2345 6789</p>
+                        <p><strong>Horario de atención:</strong> Lunes a Viernes 9:00 - 18:00</p>
+                        <p><strong>Dirección:</strong> Oficina Central, Av. Deportiva 123, Santiago</p>
                     </div>
                     <div class="contact-item">
                         <h3>Coordinación Deportiva</h3>
-                        <p>Email: deportes@torneorelampago.cl</p>
-                        <p>Teléfono: +56 9 8765 4321</p>
-                        <p>Encargado: Javier Mendoza</p>
+                        <p><strong>Email:</strong> deportes@torneorelampago.cl</p>
+                        <p><strong>Teléfono:</strong> +56 9 8765 4321</p>
+                        <p><strong>Encargado:</strong> Javier Mendoza</p>
+                        <p><strong>Especialidad:</strong> Organización disciplinas y categorías</p>
                     </div>
                     <div class="contact-item">
-                        <h3>Patrocinios y Alianzas</h3>
-                        <p>Email: sponsors@torneorelampago.cl</p>
-                        <p>Teléfono: +56 9 5555 1234</p>
-                        <p>Encargada: Francisca Rojas</p>
+                        <h3>Patrocinios y Alianzas Estratégicas</h3>
+                        <p><strong>Email:</strong> sponsors@torneorelampago.cl</p>
+                        <p><strong>Teléfono:</strong> +56 9 5555 1234</p>
+                        <p><strong>Encargada:</strong> Francisca Rojas</p>
+                        <p><strong>Especialidad:</strong> Desarrollo de alianzas corporativas</p>
                     </div>
                 </div>
             </div>
@@ -386,7 +457,8 @@
                             <option value="approved">Aprobado</option>
                             <option value="observed">Observado</option>
                         </select>
-                        <input type="text" id="search-registrations" placeholder="Buscar por nombre..." aria-label="Buscar inscripciones">
+                        <input type="text" id="search-registrations" placeholder="Buscar por nombre..."
+                            aria-label="Buscar inscripciones">
                     </div>
                     <button id="export-csv" class="btn-secondary">Exportar CSV</button>
                 </div>
@@ -403,7 +475,9 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Torneo Relámpago</h3>
-                    <p>Promoviendo el deporte inclusivo y la superación personal desde 2018. Creemos en un mundo donde el deporte una a todas las personas, sin importar sus capacidades.</p>
+                    <p>Promoviendo el deporte inclusivo y la superación personal desde 2018. Creemos firmemente en un
+                        mundo donde el deporte una a todas las personas, sin importar sus capacidades, generando
+                        comunidades más fuertes y cohesionadas.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Enlaces Rápidos</h4>
@@ -413,6 +487,8 @@
                         <li><a href="#inscripcion">Inscripción</a></li>
                         <li><a href="#accesibilidad">Accesibilidad</a></li>
                         <li><a href="#reglamento">Reglamento</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -422,11 +498,14 @@
                         <div class="sponsor-placeholder">InclusiónActiva</div>
                         <div class="sponsor-placeholder">Municipalidad</div>
                         <div class="sponsor-placeholder">VidaSana</div>
+                        <div class="sponsor-placeholder">SuperaciónTotal</div>
+                        <div class="sponsor-placeholder">EquipamientoPro</div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Torneo Relámpago. Todos los derechos reservados. | <a href="#" class="link-btn">Política de Privacidad</a> | <a href="#" class="link-btn">Términos de Uso</a></p>
+                <p>&copy; 2025 Torneo Relámpago. Todos los derechos reservados. | <a href="#">Política de Privacidad</a>
+                    | <a href="#">Términos de Uso</a> | <a href="#">Mapa del Sitio</a></p>
             </div>
         </div>
     </footer>
@@ -434,4 +513,5 @@
     <!-- Scripts -->
     <script type="module" src="app.js"></script>
 </body>
+
 </html>

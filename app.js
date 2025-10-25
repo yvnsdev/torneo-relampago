@@ -26,6 +26,7 @@ class TorneoRelampagoApp {
         await this.checkAuthState();
         await this.loadInitialData();
         this.renderNavigation();
+        this.setupScrollAnimations();
     }
     
     // Configurar event listeners
@@ -81,6 +82,28 @@ class TorneoRelampagoApp {
         if (searchRegistrations) searchRegistrations.addEventListener('input', () => this.filterRegistrations());
     }
     
+    // Configurar animaciones de scroll
+    setupScrollAnimations() {
+        // Observador de intersección para animaciones
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animación
+        document.querySelectorAll('.step, .discipline-card, .feature, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+    }
+    
     // Configurar enrutamiento por hash
     setupRouting() {
         window.addEventListener('hashchange', () => {
@@ -101,6 +124,16 @@ class TorneoRelampagoApp {
     
     // Mostrar sección específica
     showSection(sectionId) {
+        // Actualizar navegación activa
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+        
         // Ocultar todas las secciones
         document.querySelectorAll('section').forEach(section => {
             section.classList.add('hidden');
@@ -133,10 +166,14 @@ class TorneoRelampagoApp {
         // Cerrar menú móvil si está abierto
         this.closeMobileMenu();
         
-        // Scroll suave al inicio de la sección
+        // Scroll suave al inicio de la sección (usa la altura del header calculada dinámicamente)
         if (targetSection) {
+            const header = document.querySelector('.header');
+            const headerOffset = header ? header.offsetHeight : 80;
+            // dejar un pequeño margen visual
+            const extraMargin = 8;
             window.scrollTo({
-                top: targetSection.offsetTop - 80,
+                top: targetSection.offsetTop - headerOffset - extraMargin,
                 behavior: 'smooth'
             });
         }
@@ -1486,7 +1523,19 @@ class TorneoRelampagoApp {
         const toast = document.getElementById('toast');
         if (!toast) return;
         
-        toast.textContent = message;
+        const toastMessage = toast.querySelector('.toast-message');
+        const toastIcon = toast.querySelector('.toast-icon');
+        
+        if (toastMessage) toastMessage.textContent = message;
+        
+        // Cambiar icono según el tipo
+        let icon = 'ℹ️';
+        if (type === 'success') icon = '✅';
+        else if (type === 'error') icon = '❌';
+        else if (type === 'warning') icon = '⚠️';
+        
+        if (toastIcon) toastIcon.textContent = icon;
+        
         toast.className = `toast ${type}`;
         toast.classList.remove('hidden');
         
@@ -1508,17 +1557,32 @@ class TorneoRelampagoApp {
         const nav = document.querySelector('.nav');
         const toggle = document.querySelector('.menu-toggle');
         const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        
-        toggle.setAttribute('aria-expanded', !isExpanded);
+        // Calcular la posición superior para que el nav quede exactamente debajo del header
+        const header = document.querySelector('.header');
+        const headerHeight = header ? header.offsetHeight : 0;
+
+        if (!isExpanded) {
+            // Abrir: ajustar posición y altura para que no se superponga al header
+            nav.style.top = `${headerHeight}px`;
+            nav.style.height = `calc(100% - ${headerHeight}px)`;
+        } else {
+            // Cerrar: limpiar estilos inline
+            nav.style.top = '';
+            nav.style.height = '';
+        }
+
+        toggle.setAttribute('aria-expanded', (!isExpanded).toString());
         nav.classList.toggle('active');
     }
     
     closeMobileMenu() {
         const nav = document.querySelector('.nav');
         const toggle = document.querySelector('.menu-toggle');
-        
         toggle.setAttribute('aria-expanded', 'false');
         nav.classList.remove('active');
+        // limpiar estilos inline aplicados al abrir
+        nav.style.top = '';
+        nav.style.height = '';
     }
 }
 
